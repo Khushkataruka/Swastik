@@ -1,5 +1,5 @@
 import React from "react";
-import MailIcon from '@mui/icons-material/Mail'; // Import the Mail icon
+
 
 const PersonCard = ({ name, imgUrl, email, role, education }) => {
     return (
@@ -15,7 +15,7 @@ const PersonCard = ({ name, imgUrl, email, role, education }) => {
                 <h4 className="text-sm mt-2 font-semibold text-black">{name + " " + "(" + role + ")"}</h4>
                 {email && (
                     <div className="mt-4 flex justify-center items-center gap-2">
-                        <MailIcon className="text-black" /> {/* Add Mail icon */}
+                        {/* <MailIcon className="text-black" /> Add Mail icon */}
                         <span className="text-black">{email}</span>
                     </div>
                 )}
