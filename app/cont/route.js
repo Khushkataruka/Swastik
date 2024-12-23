@@ -1,4 +1,4 @@
-import Appointment from "@/app/lib/models/appointment"; // Import the Appointment model
+
 import Connect from "@/app/lib/Connect"; // Ensure database connection
 import { NextResponse } from "next/server";
 import Contact from "@/app/lib/models/contact";

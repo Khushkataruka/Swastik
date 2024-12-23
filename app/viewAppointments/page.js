@@ -6,7 +6,7 @@ import Image from 'next/image'; // Import Image from Next.js
 
 const fetchData = async (email) => {
     try {
-        const res = await fetch(`/api/Appointment?email=${email}`);
+        const res = await fetch(`/Appointment?email=${email}`);
         const response = await res.json();
 
         if (res.ok) {

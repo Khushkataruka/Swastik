@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const Connect = async () => {
     try {
+        console.log("Entered Connect");
         // If mongoose is already connected, return
         if (mongoose.connection.readyState >= 1) {
             console.log("Already connected to MongoDB");
@@ -15,6 +16,7 @@ const Connect = async () => {
         await mongoose.connect(process.env.MONGOBURI);
         console.log("Connected to MongoDB successfully");
     } catch (e) {
+        console.log("Error IN connect");
         console.error("Error occurred while connecting to MongoDB:", e);
         throw new Error("Failed to connect to MongoDB");
     }

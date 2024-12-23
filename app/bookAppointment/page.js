@@ -8,13 +8,13 @@ const Page = () => {
     const { isSignedIn, user } = useUser();
     const [load, setload] = useState(true);
 
+
     useEffect(() => {
         AOS.init({
             duration: 1000, // animation duration in milliseconds
             once: true, // whether animation should happen only once
         });
     }, []);
-
     const formSubmit = async (field) => {
         if (!isSignedIn || !user) {
             alert("User is not Signed in");
@@ -23,7 +23,6 @@ const Page = () => {
 
         const email = user.emailAddresses[0]?.emailAddress;
         const phoneNo = field.get("phoneNo");
-        const date = new Date(`${field.get("date")}T${field.get("time")}:00`);
 
         // Check time range manually
         const appointmentTime = new Date(`${field.get("date")}T${field.get("time")}:00`);
@@ -48,7 +47,7 @@ const Page = () => {
 
         try {
             setload(false);
-            const response = await fetch("/api/sendConfirmation", {
+            const response = await fetch(`/sendConfirmation`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

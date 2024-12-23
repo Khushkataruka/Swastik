@@ -21,7 +21,7 @@ const ContactUs = () => {
         };
 
         try {
-            const res = await fetch("/api/Contact",
+            const res = await fetch("/cont",
                 {
                     method: "POST",
                     headers: {

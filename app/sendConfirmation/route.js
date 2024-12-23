@@ -2,6 +2,13 @@ import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+export async function GET(req) {
+    return NextResponse.json({
+        message: "Hello",
+        status: 200
+    });
+}
+
 export async function POST(req) {
     const { email, date, location, phoneNo, Address, notes } = await req.json();
     const portLink = process.env.PORTLINK;
@@ -24,7 +31,8 @@ export async function POST(req) {
 
     // Store the details in the database temporarily
     try {
-        const response = await fetch(`${portLink}/api/Appointment`, {
+        console.log(portLink);
+        const response = await fetch(`${portLink}/Appointment`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,10 +41,13 @@ export async function POST(req) {
         });
 
         if (!response.ok) {
+            console.log(response);
+            console.log("ERROR IN HEE")
             const error = await response.json();
             console.error(error.message);
             return NextResponse.json({ message: "Failed to book appointment, try again later.", status: 400 });
         } else {
+            console.log("ERROR I HERE")
             const res = await response.json();
             console.log(res.message);
         }

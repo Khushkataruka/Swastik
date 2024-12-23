@@ -1,7 +1,6 @@
 import Appointment from "@/app/lib/models/appointment"; // Import the Appointment model
 import Connect from "@/app/lib/Connect"; // Ensure database connection
 import { NextResponse } from "next/server";
-import { Query } from "mongoose";
 
 // GET handler to fetch all appointments
 export async function GET(request) {
@@ -28,10 +27,10 @@ export async function GET(request) {
 export async function POST(request) {
     try {
         await Connect(); // Ensure database connection
-
+        console.log("Entered post")
         // // Parse the request body
         const body = await request.json();
-        const { email, phoneNo, date, location, Address, notes, confirmed, token, expireTime } = body;
+        const { email, phoneNo, date, location, Address, notes, token, expireTime } = body;
 
         // // Validate required fields
         if (!email || !phoneNo || !date) {
@@ -67,12 +66,12 @@ export async function POST(request) {
 
         // Save the record to the database
         const savedAppointment = await newAppointment.save();
-
         return NextResponse.json({
             message: "Appointment created successfully,You will receive a confirmation email",
             result: savedAppointment,
         });
     } catch (error) {
+        console.log(error);
         console.error("Error in POST handler:", error);
         return NextResponse.json(
             { error: "Failed to create appointment", details: error.message },
