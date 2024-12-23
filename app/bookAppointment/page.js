@@ -48,7 +48,7 @@ const Page = () => {
 
         try {
             setload(false);
-            const response = await fetch("/api/sendConfirmation", {
+            const response = await fetch(`${portLink}/api/Appointment`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
