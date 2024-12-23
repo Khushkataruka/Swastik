@@ -33,10 +33,12 @@ export async function POST(req) {
         });
 
         if (!response.ok) {
+            console.log("response error");
             const error = await response.json();
             console.error(error.message);
             return NextResponse.json({ message: "Failed to book appointment, try again later.", status: 400 });
         } else {
+            console.log("reponse success");
             const res = await response.json();
             console.log(res.message);
         }
