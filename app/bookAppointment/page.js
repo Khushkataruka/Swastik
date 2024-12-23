@@ -27,7 +27,7 @@ const Page = () => {
 
         // Check time range manually
         const appointmentTime = new Date(`${field.get("date")}T${field.get("time")}:00`);
-    
+
         let location = field.get("location") === "Center Visit" ? "clinic" : "homeVisit";
         const notes = field.get("notes");
         const Address = field.get("address");
@@ -48,7 +48,7 @@ const Page = () => {
 
         try {
             setload(false);
-            const response = await fetch(`/api/Appointment`, {
+            const response = await fetch("/api/sendConfirmation", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -180,7 +180,7 @@ const Page = () => {
     } else {
         return (
             <div className="flex items-center text-white text-3xl justify-center min-h-screen">
-                <img src="/loading-3692.gif" alt="Loading....." />
+                <img src="/loading-3692.gif" alt="Loading..." width={200} height={200} />
             </div>
         );
     }
