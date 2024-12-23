@@ -24,7 +24,7 @@ export async function POST(req) {
 
     // Store the details in the database temporarily
     try {
-        const response = await fetch(`http://${portLink}/api/Appointment`, {
+        const response = await fetch(`${portLink}/api/Appointment`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
