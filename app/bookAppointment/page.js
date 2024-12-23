@@ -14,8 +14,6 @@ const Page = () => {
             once: true, // whether animation should happen only once
         });
     }, []);
-
-    const portLink = process.env.PORTLINK;
     const formSubmit = async (field) => {
         if (!isSignedIn || !user) {
             alert("User is not Signed in");
@@ -49,7 +47,7 @@ const Page = () => {
 
         try {
             setload(false);
-            const response = await fetch(`${portLink}/api/sendConfirmation`, {
+            const response = await fetch(`/api/sendConfirmation`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
