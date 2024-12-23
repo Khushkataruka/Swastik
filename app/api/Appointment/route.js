@@ -31,7 +31,7 @@ export async function POST(request) {
 
         // // Parse the request body
         const body = await request.json();
-        const { email, phoneNo, date, location, Address, notes, confirmed, token, expireTime } = body;
+        const { email, phoneNo, date, location, Address, notes, token, expireTime } = body;
 
         // // Validate required fields
         if (!email || !phoneNo || !date) {
