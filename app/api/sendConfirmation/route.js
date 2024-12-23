@@ -54,7 +54,7 @@ export async function POST(req) {
     });
 
     // Generate the confirmation link
-    const verificationLink = `http://${portLink}/VerifyAppointment?token=${encodeURIComponent(
+    const verificationLink = `${portLink}/VerifyAppointment?token=${encodeURIComponent(
         token
     )}`;
 
