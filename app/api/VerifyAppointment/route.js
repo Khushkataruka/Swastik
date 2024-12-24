@@ -45,7 +45,7 @@ export async function GET(req) {
     });
 
     // Generate the confirmation link
-    const confirmationLink = `http://${process.env.PORTLINK}/ConfirmAppointment?token=${token}`;
+    const confirmationLink = `http://${process.env.PORTLINK}/api/ConfirmAppointment?token=${token}`;
 
     // Email content
     const mailOptions = {
