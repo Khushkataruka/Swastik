@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import Connect from '../lib/Connect';
-import Appointment from '../lib/models/appointment';
+import Connect from '@/app/lib/Connect';
+import Appointment from '@/app/lib/models/appointment';
 import nodemailer from 'nodemailer';
 
 export async function GET(req) {
