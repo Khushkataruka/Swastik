@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
 
           {/* Main Content */}
           <ClerkLoaded>
-            <div className="min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col bg-[#E8F0F8]">
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />

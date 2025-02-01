@@ -1,6 +1,6 @@
 import React from 'react';
 import Swastik from './Swastik';
-import a from 'next/link';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -10,32 +10,32 @@ const Footer = () => {
                     <Swastik />
                     <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
                         <li>
-                            <a href="/about" className="hover:underline me-4 md:me-6">
+                            <Link href="/about" className="hover:underline me-4 md:me-6">
                                 About
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/services" className="hover:underline me-4 md:me-6">
+                            <Link href="/services" className="hover:underline me-4 md:me-6">
                                 Services
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/" className="hover:underline me-4 md:me-6">
+                            <Link href="/" className="hover:underline me-4 md:me-6">
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/contact" className="hover:underline">
+                            <Link href="/contact" className="hover:underline">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <span className="block text-sm text-white sm:text-center">
-                    © 2023 <a href="/" className="hover:underline transition-all duration-300">
+                    © 2023 <Link href="/" className="hover:underline transition-all duration-300">
                         SwastikPathology
-                    </a>. All Rights Reserved.
+                    </Link>. All Rights Reserved.
                 </span>
             </div>
         </footer>

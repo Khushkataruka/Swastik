@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Swastik from './Swastik'
 import { UserButton } from '@clerk/nextjs'
 import { useUser } from '@clerk/nextjs'
+import Link from 'next/link'
 
 const Navbar = () => {
     const { isSignedIn, user } = useUser()
@@ -59,32 +60,32 @@ const Navbar = () => {
                         }`}
                 >
                     <li className='relative group'>
-                        <a href={'/'} onClick={() => { setIsMenuOpen(false) }}>Home</a>
+                        <Link href={'/'} onClick={() => { setIsMenuOpen(false) }}>Home</Link>
                         <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                     </li>
                     <li className='relative group'>
-                        <a href={'/about'} onClick={() => { setIsMenuOpen(false) }}>About</a>
+                        <Link href={'/about'} onClick={() => { setIsMenuOpen(false) }}>About</Link>
                         <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                     </li>
                     <li className='relative group'>
-                        <a href={'/contact'} onClick={() => { setIsMenuOpen(false) }}>Contact</a>
+                        <Link href={'/contact'} onClick={() => { setIsMenuOpen(false) }}>Contact</Link>
                         <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                     </li>
                     {!isSignedIn ? (
                         <>
                             <li className='relative group'>
-                                <a href={'/sign-up'} onClick={() => setIsMenuOpen(false)}>Login</a>
+                                <Link href={'/sign-up'} onClick={() => setIsMenuOpen(false)}>Login</Link>
                                 <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                             </li>
                             <li className='relative group'>
-                                <a href={'/sign-in'} onClick={() => { setIsMenuOpen(false) }}>Sign Up</a>
+                                <Link href={'/sign-in'} onClick={() => { setIsMenuOpen(false) }}>Sign Up</Link>
                                 <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                             </li>
                         </>
                     ) : (
                         <>
                             <li className='relative group'>
-                                <a href={`/${user.firstName} ${user.lastName}/dashboard`} onClick={() => { setIsMenuOpen(false) }}>Dashboard</a>
+                                <Link href={`/${user.firstName} ${user.lastName}/dashboard`} onClick={() => { setIsMenuOpen(false) }}>Dashboard</Link>
                                 <span className='absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300'></span>
                             </li>
                             <li onClick={() => { setIsMenuOpen(false) }}>

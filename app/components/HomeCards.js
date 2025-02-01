@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const cards = [
     {
@@ -47,7 +48,7 @@ const HomeCards = () => {
             {cards.map((card) => {
                 return (
                     <div key={card.title} data-aos="zoom-out">
-                        <a href={card.link}>
+                       <Link href={card.link}>
                             <div
                                 className="card h-[250px] flex flex-col justify-center items-center text-center text-white w-full min-h-fit rounded-xl p-6 gap-4 my-4 transition-transform duration-300 transform hover:scale-105 relative"
                                 style={{
@@ -67,7 +68,7 @@ const HomeCards = () => {
                                     </p>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </div >
                 );
             })}

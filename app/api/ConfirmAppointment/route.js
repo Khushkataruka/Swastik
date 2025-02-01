@@ -37,7 +37,7 @@ export async function GET(req) {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: appointment.email,
-            subject: 'Appointment Confirmation',
+            subject: 'Appointment Status',
             html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; color: #333;">
           <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">

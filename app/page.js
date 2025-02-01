@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image"; // Import Image from Next.js
 
+
 export default function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -44,10 +45,10 @@ export default function Home() {
           }}
         >
           <h1 className="text-3xl md:text-5xl font-semibold text-center p-4" data-aos="fade-up">
-            Simplifying Healthcare, One Step at a Time
+            Swastik Pathology Lab
           </h1>
           <p className="text-lg md:text-xl text-center mt-2 max-w-lg px-4 italic" data-aos="fade-down">
-            &quot;Empowering healthcare providers with faster, reliable payments for a seamless patient experience.&quot;
+            &quot;Where Precision Meets Care:Unveiling Healths Hideen Truths.&quot;
           </p>
         </div>
         <div className="cards flex flex-wrap items-center justify-center m-4">

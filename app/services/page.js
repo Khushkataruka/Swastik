@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import CustomSlider from '../components/customeSlider';
 import HomeCards from '../components/HomeCards';
+import Insurances from '../components/Insurances';
 
 const services = [
     {
@@ -21,51 +22,63 @@ const services = [
         content: "Tests for immune health, allergies, and autoimmune diseases like rheumatoid arthritis."
     },
     {
-        id: 5,
+        id: 4,
         name: "Hormonal Testing",
         content: "Hormone tests for thyroid, adrenal, and reproductive health issues like PCOS and infertility."
     },
     {
-        id: 6,
+        id: 5,
         name: "Microbiology Testing",
         content: "Detects infections from bacteria, viruses, fungi, and parasites for effective treatment."
     },
     {
-        id: 7,
+        id: 6,
         name: "Cytology",
         content: "Cell analysis for abnormalities, infections, and cancer using Pap smears and FNAC."
     },
     {
-        id: 8,
+        id: 7,
         name: "Histopathology",
         content: "Tissue examination to diagnose chronic diseases, tumors, and infections."
     },
     {
-        id: 9,
+        id: 8,
         name: "Prenatal Screening",
         content: "Tests for fetal and maternal health, including NIPT and chromosomal abnormality screening."
     },
     {
+        id: 9,
+        name: "CT Scans",
+        content: "Cross-sectional body scans for tumors, fractures, and internal injuries."
+    },
+    {
         id: 10,
+        name: "X-rays",
+        content: "Quick imaging for bones, chest, and dental diagnostics."
+    },
+    {
+        id: 11,
         name: "Home Sample Collection",
         content: "Doorstep collection of samples with strict hygiene and timely reporting."
     },
     {
-        id: 11,
+        id: 12,
         name: "Specialized Veterinary Services",
         content: "Diagnostic tests for pets and livestock, including blood tests and hormone profiling."
     },
     {
-        id: 12,
+        id: 13,
         name: "Factory Medical Checkup",
         content: "Affordable tests like lung function, ECG, and kidney tests for factory workers."
     },
     {
-        id: 13,
+        id: 14,
         name: "Prepolicy and Post policy checkup",
         content: "Health checkups for insurance policies before and after issuance."
     }
-]; const slides = [
+];
+
+const slides = [
     {
         image: "/slider1.jpg",
         heading: "Factory Medical Checkup",
@@ -87,15 +100,20 @@ const services = [
         description: services[4].content
     },
     {
-        image: "/stethescope.jpg",
-        heading: services[11].name,
-        description: services[11].content,
+        image: "/ct-scan.jpg",
+        heading: services[8].name,
+        description: services[8].content
+    },
+    {
+        image: "/xRay.jpg",
+        heading: services[9].name,
+        description: services[9].content
     }
 ];
 
 const Page = () => {
     return (
-        <div className="bg-[#E8F0F8] min-h-screen p-8">
+        <div className="min-h-screen p-8">
             <CustomSlider slides={slides} autoPlay={true} interval={10000} />
             <section className=" my-8 hero flex gap-10 bg-white shadow-md p-6 rounded-xl max-[1400px]:flex-col max-[1400px]:items-center justify-center">
                 <Image src={`/services.jpg`} width={400} height={600} alt="Services" className="rounded-md" />
@@ -110,6 +128,7 @@ const Page = () => {
                     </ol>
                 </div>
             </section>
+            <Insurances />
             <HomeCards />
         </div>
     );

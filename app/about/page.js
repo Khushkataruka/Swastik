@@ -2,6 +2,7 @@ import React from 'react';
 import PersonCard from '../components/personCard';
 import HomeCards from '../components/HomeCards';
 import Image from 'next/image';
+import Insurances from '../components/Insurances';
 
 const teamMembers = [
     {
@@ -86,6 +87,7 @@ const Page = () => {
                 </ul>
             </div>
             <HomeCards />
+            <Insurances/>
         </div>
     );
 };

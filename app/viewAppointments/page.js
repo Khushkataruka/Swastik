@@ -49,7 +49,7 @@ const ViewAppointmentsPage = () => {
             return <p className="text-center text-lightblue-300 text-2xl">No appointments found.</p>;
         }
         return (
-            <div className="w-full md:w-4/5 mx-auto py-10 bg-white">
+            <div className="w-full md:w-4/5 mx-auto py-10">
                 <h2 className="text-3xl text-center font-semibold text-lightblue-500 mb-10 text-[#42A5F5]">Your Appointments</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full table-auto border-collapse bg-white">
